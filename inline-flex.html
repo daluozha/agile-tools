@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+
+    /*Flex 容器*/
+    .flex__container {
+      display: inline-flex;
+      background-color: gray;
+    }
+
+    /*Flex 子 Item */
+    .flex__item {
+      width: 50px;
+      height: 50px;
+
+      background-color: aqua;
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+<!-- 两者的区别描述：
+    flex： 将对象作为弹性伸缩盒显示
+    inline-flex：将对象作为内联块级弹性伸缩盒显示
+    一句话来描述就是 
+    当Flex Box 容器没有设置宽度大小限制时，当display 指定为 flex 时，FlexBox 的宽度会填充父容器，
+    当display指定为 inline-flex 时，FlexBox的宽度会包裹子Item，如下图所示： 
+-->
+<!--Flex容器-->
+<div class="flex__container">
+
+  <!--Flex容器中的子Item-->
+  <div class="flex__item"></div>
+  <div class="flex__item"></div>
+  <div class="flex__item"></div>
+  <div class="flex__item"></div>
+</div>
+
+</body>
+</html>

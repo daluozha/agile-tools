@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ecf0f6;
+        }
+        .canvas{
+            height: 720px;
+            width: 720px;
+            background-color: #fff;
+            background-size: 16px 16px;
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+            /* transparent 不能直接用#fff替代，不然显示不了 */
+            background-image: linear-gradient(to top right, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%), linear-gradient(to top right, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%);
+            background-position: 0 0,8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas"></div>
+</body>
+</html>
