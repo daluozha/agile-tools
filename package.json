@@ -18,5 +18,8 @@
   "homepage": "https://github.com/daluozha/agile-tools#readme",
   "dependencies": {
     "puppeteer": "^8.0.0"
+  },
+  "devDependencies": {
+    "snabbdom": "^2.1.0"
   }
 }
