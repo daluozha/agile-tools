@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html *{
+            padding: 0;
+            margin: 0;
+        }
+        section div{
+            min-height: 100px;
+        }
+        .left,.right{
+            background-color: red;
+            width: 200px;
+        }
+        .middle{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 假设高度已知，请写出三栏布局，其中左栏、右栏宽度各为300px，中间自适应 -->
+    <style>
+        .layout-1{
+            display: flex;
+        }
+        .layout-1 .middle{
+            flex: 1;
+        }
+    </style>
+    <section class="layout-1">
+        <div class="left"></div>
+        <div class="middle">          
+            <h2>flexbox解决方案</h2>
+            1.这是三栏布局的浮动解决方案；
+            2.这是三栏布局的浮动解决方案；
+        </div>
+        <div class="right"></div>
+    </section>
+    <div style="height:100px"></div>
+    <style>
+        .layout-2 .middle{
+        }
+        .layout-2 .left{
+            float: left;
+        }
+        .layout-2 .right{
+            float: right;
+        }
+    </style>
+    <section class="layout-2">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="middle">
+            <h2>浮动解决方案</h2>
+            1.这是三栏布局的浮动解决方案；
+            2.这是三栏布局的浮动解决方案；
+        </div>
+    </section>
+    <div style="height:100px"></div>
+    <style>
+        .layout-3 .middle{
+            position: absolute;
+            left: 200px;
+            right: 200px;
+        }
+        .layout-3 .left{
+            position: absolute;
+            left: 0;
+        }
+        .layout-3 .right{
+            position: absolute;
+            right: 0;
+        }
+    </style>
+    <section class="layout-3">
+        <div class="left"></div>
+        <div class="middle">
+            <h2>绝对定位解决方案</h2>
+            1.这是三栏布局的浮动解决方案；
+            2.这是三栏布局的浮动解决方案；
+        </div>
+        <div class="right"></div>
+    </section>
+
+    <!-- todo grid和table的方案 -->
+</body>
+</html>
