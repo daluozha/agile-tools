@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="text" id="a">
+  </head>
+  <body>
+    <!-- 参考：https://juejin.cn/post/6844903616046710791 -->
+    <input type="text" id="a" />
     <div id="b"></div>
     <script>
-        var obj = {}
-        Object.defineProperty(obj, 'value' ,{
-            set(newVal){
-                console.log(Object.prototype.toString.call(document.getElementById('a')) )
-                document.getElementById('a').value = newVal
-                document.getElementById('b').innerHTML = newVal
-            }
-        })
-        document.addEventListener('keyup',function(e){
-            // console.log(e)
-            obj.value = e.target.value
-        })
+      var obj = {};
+      Object.defineProperty(obj, "value", {
+        set(newVal) {
+          console.log(
+            Object.prototype.toString.call(document.getElementById("a"))
+          );
+          document.getElementById("a").value = newVal;
+          document.getElementById("b").innerHTML = newVal;
+        },
+      });
+      document.addEventListener("keyup", function (e) {
+        // console.log(e)
+        obj.value = e.target.value;
+      });
     </script>
-
-</body>
+  </body>
 </html>
