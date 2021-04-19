@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #A {
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+        }
+        #B {
+            background-color: bisque;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="A">
+      <div id="B"></div>
+    </div>
+    <script>
+      var a = document.getElementById("A"),
+          b = document.getElementById("B");
+      function handler(e) {
+        console.log(e.target);
+        console.log(e.currentTarget);
+        // currentTarget始终是监听事件者，而target是事件的真正发出者。
+      }
+      a.addEventListener("click", handler, false);
+    </script>
+  </body>
+</html>
