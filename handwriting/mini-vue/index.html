@@ -1,0 +1,17 @@
+<div id="app">You are {{ counter }} seconds older!!!</div>
+<img src="https://github.com/JowieXiang/tutorials/blob/master/mini_vue/mini-vue.jpg?raw=true" 
+style="	width: auto;height: auto;max-width: 100%;max-height: 100%;">
+<script src="index.js"></script>
+<script>
+  var app = new Vue({
+    el: "#app",
+    data: {
+      counter: 0
+    }
+  })
+
+  setInterval(() => {
+    app.counter += 1
+  }, 1000)
+
+</script>
