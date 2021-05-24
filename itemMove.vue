@@ -1,6 +1,6 @@
 <template>
   <div class="move-container">
-    <img alt="Vue logo" src="../assets/logo.png"
+    <img alt="Vue logo" src="https://cn.vuejs.org/images/logo.png"
       class="move"
       style="position:absolute;">
   </div>

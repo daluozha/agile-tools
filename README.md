@@ -1,6 +1,6 @@
 # RENEKTOY
 
-目前公开的代码碎片：
+### 目前公开的代码碎片：
 
 - itemMove.vue : 使用鼠标事件来拖拽元素，实现元素移动的行为
 - bfc
@@ -15,3 +15,12 @@
   - new 实现
   - EventEmitter.js : 发布订阅模式、观察者模式
   - curry 函数柯里化
+
+
+### 快速运行 vue 文件
+```
+npm install -g @vue/cli-service-global
+
+// 以 itemMove.vue 作为例子
+vue serve itemMove.vue
+```
