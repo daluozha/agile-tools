@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform: rotate(90deg);
+      transform-origin: 100%;
+      transition: all 0.05s;
+      /* transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); */
+    }
+
+  </style>
+
+  <script>
+    // FINISHED的方法，指针会先逆时针从 444° 旋转至 90°（因为rotate减少就是逆时针变化），再继续我们期望的顺时针旋转。但如果让这个角度值一直保持增长，也就不会出现逆时针回旋的问题了。
+    let hourHand=document.querySelector('.hour-hand'),
+        minHand=document.querySelector('.min-hand'),
+        secondHand=document.querySelector('.second-hand')
+        secDeg=0,minDeg=0,hourDeg=0
+    let curTime=new Date()
+    secDeg=curTime.getSeconds()/60*360+90
+    minDeg=curTime.getMinutes()/60*360+curTime.getSeconds()/60/60*360+90
+    hourDeg=curTime.getHours()/60*360+curTime.getMinutes()/60/12*360+curTime.getSeconds()/60/60/12*360+90
+    function fresh(){
+      secDeg+=6
+      minDeg+=6/60
+      hourDeg+=6/3600
+      secondHand.style.transform=`rotate(${secDeg}deg)`
+      minHand.style.transform=`rotate(${minDeg}deg)`
+      hourHand.style.transform=`rotate(${hourDeg}deg)`
+    }
+    setInterval(fresh, 1000);
+    fresh()
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+//将原文的英文城市改成唐诗Original cities can change to Tang Poetry,thanks to https://github.com/soyaine/JavaScript30
+// const endpoint = 'https://gist.githubusercontent.com/soyaine/81399bb2b24ca1bb5313e1985533c640/raw/bdf7df2cbcf70706c4a5e51a7dfb8c933ed78878/TangPoetry.json';
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+let data=[]
+fetch(endpoint).then(res=>res.json()).then(res=>{
+  data=res
+})
+
+let search=document.querySelector('.search')
+let suggestions=document.querySelector('.suggestions')
+function update(){
+  let matchArray=matchValue(this.value,data)
+  console.log(matchArray)
+  let html=matchArray.map(item=>{
+    let reg=new RegExp(this.value,'gi')
+    let city=item.city.replace(reg,`<span class="hl">${this.value}</span>`)
+    let state=item.state.replace(reg,`<span class="hl">${this.value}</span>`)
+    return `
+    <li>
+      <span class="name">${city},${state}</span>
+      <span class="population">${item.population}</span>
+    </li>
+    `
+  }).join('')
+  suggestions.innerHTML=html
+}
+function matchValue(value,data){
+  let reg=new RegExp(value,'gi')
+  return data.filter(item=>{
+    return item.city.match(reg)||item.state.match(reg)
+  })
+}
+search.addEventListener('change',update)
+search.addEventListener('keyup',update)
+</script>
+</body>
+</html>
