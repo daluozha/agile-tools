@@ -15,6 +15,7 @@
   - new 实现
   - EventEmitter.js : 发布订阅模式、观察者模式
   - curry 函数柯里化
+- node: <https://www.runoob.com/nodejs/nodejs-tutorial.html >
 
 
 ### 快速运行 vue 文件
