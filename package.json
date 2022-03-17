@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:nodemon": "nodemon node/http.js",
-    "start:node": "node node/http.js",
+    "http:nodemon": "nodemon node/http.js",
+    "http:node": "node node/http.js",
+    "express": "nodemon node/express.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
