@@ -1,5 +1,5 @@
 {
-  "name": "agile-tools",
+  "name": "RENEKTOY",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daluozha/agile-tools.git"
+    "url": "git+https://github.com/daluozha/RENEKTOY.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/daluozha/agile-tools/issues"
+    "url": "https://github.com/daluozha/RENEKTOY/issues"
   },
-  "homepage": "https://github.com/daluozha/agile-tools#readme",
+  "homepage": "https://github.com/daluozha/RENEKTOY#readme",
   "dependencies": {
     "cowsay": "^1.5.0",
     "express": "^4.17.3",
