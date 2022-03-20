@@ -1,16 +1,10 @@
 enum Direction {
-    NORTH = 3,
-    SOUTH,
-    EAST,
-    WEST,
+    Up = -1,
+    Down,
+    Left = 9,
+    Right
 }
 
-interface Person {
-    name: string;
-    age: number;
-}
+console.log(Direction.Up)
+console.log(Direction[0])
 
-let Semlinker: Person = {
-    name: "Semlinker",
-    age: 33,
-};

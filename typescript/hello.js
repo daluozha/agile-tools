@@ -1,11 +1,9 @@
 var Direction;
 (function (Direction) {
-    Direction[Direction["NORTH"] = 3] = "NORTH";
-    Direction[Direction["SOUTH"] = 4] = "SOUTH";
-    Direction[Direction["EAST"] = 5] = "EAST";
-    Direction[Direction["WEST"] = 6] = "WEST";
+    Direction[Direction["Up"] = 3] = "Up";
+    Direction[Direction["Down"] = 4] = "Down";
+    Direction[Direction["Left"] = 5] = "Left";
+    Direction[Direction["Right"] = 6] = "Right";
 })(Direction || (Direction = {}));
-var Semlinker = {
-    name: "Semlinker",
-    age: 33
-};
+console.log(Direction.Up);
+console.log(Direction[0]);
