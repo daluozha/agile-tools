@@ -8,3 +8,4 @@ enum Direction {
 console.log(Direction.Up)
 console.log(Direction[0])
 
+const noop = () => null
