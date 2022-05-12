@@ -10,4 +10,11 @@ module.exports = {
     path: path.join(__dirname, "webpack-dist"),
     filename: "bundle.js",
   },
+  devServer: {
+    // contentBase: './webpack-dist',
+    static: './webpack-dist',
+    port: '8088',
+    // inline: true,
+    historyApiFallback: true
+  }
 };

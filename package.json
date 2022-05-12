@@ -7,7 +7,9 @@
     "http:nodemon": "nodemon node/http.js",
     "http:node": "node node/http.js",
     "express": "nodemon node/express.js",
-    "webpack-build": "webpack ./webpack-src/index.js -o ./webpack-dist/bundle.js"
+    "webpack-build1": "webpack ./webpack-src/index.js -o ./webpack-dist/bundle.js",
+    "webpack-build2": "webpack",
+    "dev": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
