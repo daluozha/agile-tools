@@ -7,7 +7,7 @@
     "http:nodemon": "nodemon node/http.js",
     "http:node": "node node/http.js",
     "express": "nodemon node/express.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack-build": "webpack ./webpack-src/index.js -o ./webpack-dist/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,9 @@
     "@babel/traverse": "^7.14.2",
     "@babel/types": "^7.14.2",
     "nodemon": "^2.0.15",
-    "snabbdom": "^2.1.0"
+    "snabbdom": "^2.1.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   }
 }
