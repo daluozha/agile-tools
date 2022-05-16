@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "http:nodemon": "nodemon node/http.js",
     "http:node": "node node/http.js",
