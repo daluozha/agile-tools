@@ -6,13 +6,43 @@ import traverse from "@babel/traverse";
 import path from "path";
 import ejs from "ejs";
 import { transformFromAst } from "babel-core";
-let id = 0
+import { jsonLoader } from "./jsonLoader.js";
+
+const webpackConfig = {
+  module: {
+    rules: [
+      {
+        test: /\.json$/,
+        use: [jsonLoader],
+      },
+    ],
+  },
+};
+
+let id = 0;
 function createAsset(filePath) {
   // 1. 获取文件的内容
   // 2. 获取依赖关系
   //    ast：抽象语法树
-  const source = fs.readFileSync(filePath, {
+  let source = fs.readFileSync(filePath, {
     encoding: "utf-8",
+  });
+
+  // json 转换
+  const loaders = webpackConfig.module.rules;
+  const loaderContext = {
+    addDeps(dep) {
+      console.log("addDeps", dep);
+    },
+  };
+  loaders.forEach(({ test, use }) => {
+    if (test.test(filePath)) {
+      if (Array.isArray(use)) {
+        use.reverse().forEach((fn) => {
+          source = fn.call(loaderContext, source);
+        });
+      }
+    }
   });
 
   const ast = parser.parse(source, {
@@ -34,8 +64,8 @@ function createAsset(filePath) {
     filePath,
     deps,
     code,
-    mapping : {},
-    id: id++
+    mapping: {},
+    id: id++,
   };
 }
 // const asset = createAsset();
@@ -51,7 +81,7 @@ function createGraph() {
       result.push(cur);
       cur.deps.forEach((relativePath) => {
         const child = createAsset(path.resolve("./example", relativePath));
-        cur.mapping[relativePath] = child.id
+        cur.mapping[relativePath] = child.id;
         queue.push(child);
       });
       curSize--;
@@ -67,11 +97,11 @@ function build(graph) {
     encoding: "utf-8",
   });
   const data = graph.map((asset) => {
-    const {id ,code ,mapping} = asset
+    const { id, code, mapping } = asset;
     return {
       id,
       code,
-      mapping
+      mapping,
     };
   });
   const code = ejs.render(template, { data });
