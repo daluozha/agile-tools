@@ -7,6 +7,8 @@ import path from "path";
 import ejs from "ejs";
 import { transformFromAst } from "babel-core";
 import { jsonLoader } from "./jsonLoader.js";
+import { ChangeOutputPath } from "./ChangeOutputPath.js";
+import { SyncHook } from "tapable";
 
 const webpackConfig = {
   module: {
@@ -17,8 +19,11 @@ const webpackConfig = {
       },
     ],
   },
+  plugins: [new ChangeOutputPath()],
 };
-
+const hooks = {
+  emitFile: new SyncHook(["context"]),
+};
 let id = 0;
 function createAsset(filePath) {
   // 1. 获取文件的内容
@@ -92,6 +97,14 @@ function createGraph() {
 
 const graph = createGraph();
 
+function initPlugins() {
+  const plugins = webpackConfig.plugins;
+  plugins.forEach((plugin) => {
+    plugin.apply(hooks);
+  });
+}
+initPlugins()
+
 function build(graph) {
   const template = fs.readFileSync("./bundle.ejs", {
     encoding: "utf-8",
@@ -105,7 +118,13 @@ function build(graph) {
     };
   });
   const code = ejs.render(template, { data });
-
-  fs.writeFileSync("./_dist/bundle.js", code);
+  let outputPath = "./_dist/bundle.js"
+  const context ={
+    changeOutputPath(path){
+      outputPath = path
+    }
+  }
+  hooks.emitFile.call(context);
+  fs.writeFileSync(outputPath, code);
 }
 build(graph);
