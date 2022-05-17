@@ -16,7 +16,7 @@
   - EventEmitter.js : 发布订阅模式、观察者模式
   - curry 函数柯里化
   - **mini-vue** 
-  - **mini-webpack** 
+  - **mini-webpack** 参考<https://www.bilibili.com/video/BV1oL411V7BQ >
 - node: 
   - <https://www.runoob.com/nodejs/nodejs-tutorial.html >
   - <http://nodejs.cn/learn >
