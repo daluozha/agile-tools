@@ -1,19 +1,24 @@
 // 预想的中打包好的 js 文件
 (function (modules) {
-  function require1(filePath) {
-    const fn = modules[filePath];
-    const module1 = {
-      exports1: {},
-    };
-    fn(require1, module1, module1.exports1);
-
-    return module1.exports1;
-  }
+    function require(id) {
+        const [fn, mapping] = modules[id];
+        const module = {
+          exports: {},
+        };
+        function localRequire(filePath){
+            const id = mapping[filePath]
+            return require(id)
+        }
+        fn(localRequire, module, module.exports);
+    
+        return module.exports;
+    }
+    require(0)
 })({
     <% data.forEach(element => {%> 
-        "<%- element["filePath"] %>" : function (require1, module1, module1.exports1) {
+        <%- element["id"] %> : [function (require, module, exports) {
             <%- element["code"] %> 
-        },        
+        },<%- JSON.stringify(element["mapping"]) %> ],        
     <% }); %> 
 
 });

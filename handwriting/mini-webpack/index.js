@@ -6,7 +6,7 @@ import traverse from "@babel/traverse";
 import path from "path";
 import ejs from "ejs";
 import { transformFromAst } from "babel-core";
-
+let id = 0
 function createAsset(filePath) {
   // 1. 获取文件的内容
   // 2. 获取依赖关系
@@ -34,6 +34,8 @@ function createAsset(filePath) {
     filePath,
     deps,
     code,
+    mapping : {},
+    id: id++
   };
 }
 // const asset = createAsset();
@@ -47,9 +49,10 @@ function createGraph() {
     while (curSize) {
       let cur = queue.shift();
       result.push(cur);
-      cur.deps.forEach((item) => {
-        const asset = createAsset(path.resolve("./example", item));
-        queue.push(asset);
+      cur.deps.forEach((relativePath) => {
+        const child = createAsset(path.resolve("./example", relativePath));
+        cur.mapping[relativePath] = child.id
+        queue.push(child);
       });
       curSize--;
     }
@@ -64,14 +67,15 @@ function build(graph) {
     encoding: "utf-8",
   });
   const data = graph.map((asset) => {
+    const {id ,code ,mapping} = asset
     return {
-      filePath: asset.filePath,
-      code: asset.code,
+      id,
+      code,
+      mapping
     };
   });
   const code = ejs.render(template, { data });
 
-  console.log(data);
-  fs.writeFileSync("./dist/bundle.js", code);
+  fs.writeFileSync("./_dist/bundle.js", code);
 }
 build(graph);
