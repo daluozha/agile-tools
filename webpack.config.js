@@ -9,7 +9,8 @@ const glob = require("glob"); // 引入glob模块,用于扫描全部html文件�
 
 // console.log(path.join(__dirname, "/webpack-src/index.js"));
 module.exports = {
-  mode: "development",
+  // mode: "development",
+  mode: "production",
   // entry: path.join(__dirname, "/webpack-src/index.js"),
   entry: path.join(__dirname, "/webpack-src/index1.ts"),
   output: {
@@ -17,6 +18,10 @@ module.exports = {
     // filename: "bundle.js",
     filename: "bundle1.js",
     clean: true,
+    // environment:{
+    //   // 是否允许使用箭头函数
+    //   arrowFunction: true
+    // }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -42,7 +47,29 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: ["ts-loader"],
+        // 顺序是从后往前执行
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    targets: {
+                      chrome: "58",
+                      ie: "11",
+                    },
+                    corejs: "3",
+                    // 使用 corejs 的方式， usage 表示按需加载
+                    useBuiltIns: "usage",
+                  },
+                ],
+              ],
+            },
+          },
+          "ts-loader",
+        ],
         exclude: /node_modules/,
       },
       {
