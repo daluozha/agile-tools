@@ -1,0 +1,6 @@
+{
+    "include": ["./typescript/**/*"],
+    "compilerOptions": {
+        "outDir": "ts-dist"
+    }
+}
