@@ -58,7 +58,7 @@ module.exports = {
                   {
                     targets: {
                       chrome: "58",
-                      ie: "11",
+                      // ie: "11", // 兼容 ie 需要使用 corejs
                     },
                     corejs: "3",
                     // 使用 corejs 的方式， usage 表示按需加载

@@ -20,7 +20,7 @@
 - node: 
   - <https://www.runoob.com/nodejs/nodejs-tutorial.html >
   - <http://nodejs.cn/learn >
-- typescript: ts 入门练手
+- typescript: ts 入门练手 <https://www.bilibili.com/video/BV1Xy4y1v7S2 >
 - webpack-src : webpack demo 详见 <https://segmentfault.com/a/1190000021693432 >
 - rollup-src : rollup demo 详见 <https://www.ruanyifeng.com/blog/2022/05/rollup.html >
 
