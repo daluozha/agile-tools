@@ -43,7 +43,7 @@ module.exports = {
       {
         test: /\.ts$/,
         use: ["ts-loader"],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
@@ -97,5 +97,10 @@ module.exports = {
     // inline: true,
     historyApiFallback: true,
     // hot: true
+  },
+
+  // 用来设置引用模块
+  resolve: {
+    extensions: [".ts", ".js"],
   },
 };
