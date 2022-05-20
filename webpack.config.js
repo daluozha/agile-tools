@@ -4,17 +4,18 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PurifyCssWebpack = require('purifycss-webpack') // 引入PurifyCssWebpack插件
-const glob = require('glob') // 引入glob模块,用于扫描全部html文件中所引用的css
-
+const PurifyCssWebpack = require("purifycss-webpack"); // 引入PurifyCssWebpack插件
+const glob = require("glob"); // 引入glob模块,用于扫描全部html文件中所引用的css
 
 // console.log(path.join(__dirname, "/webpack-src/index.js"));
 module.exports = {
   mode: "development",
-  entry: path.join(__dirname, "/webpack-src/index.js"),
+  // entry: path.join(__dirname, "/webpack-src/index.js"),
+  entry: path.join(__dirname, "/webpack-src/index1.ts"),
   output: {
     path: path.join(__dirname, "/webpack-dist"),
-    filename: "bundle.js",
+    // filename: "bundle.js",
+    filename: "bundle1.js",
     clean: true,
   },
   plugins: [
@@ -39,6 +40,11 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.ts$/,
+        use: ["ts-loader"],
+        exclude: /node_modules/
+      },
       {
         test: /\.css$/,
         use: [
