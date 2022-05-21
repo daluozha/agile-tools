@@ -1,11 +1,4 @@
 import "./style/index.less"
-import Food from './modules/Food'
-const food = new Food()
-food.change()
+import GameControl from './modules/GameControl'
 
-
-// const scorePanel = new ScorePanel(100, 2)
-// for (let i = 0; i < 10; i++) {
-//     scorePanel.addScore()
-
-// }
+new GameControl();
