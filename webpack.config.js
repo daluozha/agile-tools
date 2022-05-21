@@ -12,11 +12,11 @@ module.exports = {
   // mode: "development",
   mode: "production",
   // entry: path.join(__dirname, "/webpack-src/index.js"),
-  entry: path.join(__dirname, "/webpack-src/index1.ts"),
+  entry: path.join(__dirname, "/webpack-src/snake/index.ts"),
   output: {
     path: path.join(__dirname, "/webpack-dist"),
     // filename: "bundle.js",
-    filename: "bundle1.js",
+    filename: "snake.js",
     clean: true,
     // environment:{
     //   // 是否允许使用箭头函数
@@ -58,7 +58,7 @@ module.exports = {
                   {
                     targets: {
                       chrome: "58",
-                      // ie: "11", // 兼容 ie 需要使用 corejs
+                      ie: "11", // 兼容 ie 需要使用 corejs
                     },
                     corejs: "3",
                     // 使用 corejs 的方式， usage 表示按需加载
@@ -100,6 +100,28 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: () => [
+                  "postcss-preset-env",
+                  // require("postcss-preset-env")(),
+                  {
+                    browsers: "last 2 versions",
+                  },
+                ],
+              },
+            },
+          },
+          "less-loader",
+        ],
+      },
       // {
       //   test: /\.(scss|sass)$/,
       //   use: ['style-loader', 'css-loader', 'sass-loader']
@@ -127,7 +149,7 @@ module.exports = {
   },
 
   optimization: {
-    minimize: false
+    minimize: false,
   },
   // 用来设置引用模块
   resolve: {
