@@ -18,22 +18,23 @@ module.exports = {
     // filename: "bundle.js",
     filename: "snake.js",
     clean: true,
-    // environment:{
-    //   // 是否允许使用箭头函数
-    //   arrowFunction: true
-    // }
+    environment:{
+      // 是否允许使用箭头函数
+      arrowFunction: false,
+      const: false
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
       // template: "webpack-index.html",
       template:"./webpack-src/snake/index.html",
-      // inject: true,
-      // minify: {
-      //   removeComments: true,
-      //   collapseWhitespace: true,
-      //   removeAttributeQuotes: true,
-      // },
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
     new CleanWebpackPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
