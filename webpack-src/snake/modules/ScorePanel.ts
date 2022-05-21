@@ -26,3 +26,4 @@ class ScorePanel {
 
 
 
+export default ScorePanel;
