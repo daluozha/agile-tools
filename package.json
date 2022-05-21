@@ -10,7 +10,7 @@
     "express": "nodemon node/express.js",
     "webpack-build1": "webpack ./webpack-src/index.js -o ./webpack-dist/bundle.js",
     "webpack-build2": "webpack",
-    "dev": "webpack-dev-server --open"
+    "webpack-dev": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",

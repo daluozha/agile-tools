@@ -26,13 +26,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "webpack-index.html",
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-      },
+      // template: "webpack-index.html",
+      template:"./webpack-src/snake/index.html",
+      // inject: true,
+      // minify: {
+      //   removeComments: true,
+      //   collapseWhitespace: true,
+      //   removeAttributeQuotes: true,
+      // },
     }),
     new CleanWebpackPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
@@ -146,6 +147,7 @@ module.exports = {
     // inline: true,
     historyApiFallback: true,
     // hot: true
+    watchFiles: ['./webpack-src/snake/index.html']
   },
 
   optimization: {
