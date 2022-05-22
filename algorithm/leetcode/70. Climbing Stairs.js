@@ -16,7 +16,7 @@
 //     if(n < 3) return n
 //     let one = 1,two = 2,cur
 //     for(let i = 3;i <= n;i++){
-//         cur = one + two 
+//         cur = one + two
 //         one = two
 //         two = cur
 //     }
@@ -24,7 +24,7 @@
 // };
 
 // 尾递归优化
-var climbStairs = function(n, res1 = 1,res2 = 1) {
-    if(n === 1) return res1
-    return climbStairs(n - 1,res1 + res2,res1)
+var climbStairs = function (n, res1 = 1, res2 = 1) {
+  if (n === 1) return res1;
+  return climbStairs(n - 1, res1 + res2, res1);
 };
