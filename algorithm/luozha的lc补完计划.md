@@ -201,10 +201,10 @@ todo: 617 543  338 46 48  287 2 98 4
 
 <https://labuladong.github.io/algo/3/ >
 
-| 题号 | 题目               |  |
-| :--- | :----------------- | ---- |
-| 509  | 斐波那契数      | 1 |
-| 70   | 爬楼梯      | 1 |
+| 题号 | 题目               | AC |
+| :--- | :----------------- | :--- |
+| 509  | [斐波那契数](https://leetcode.cn/problems/fibonacci-number/) | 1 |
+| 70   | [爬楼梯](https://leetcode.cn/problems/climbing-stairs/) | 1 |
 | 746  | 使用最小花费爬楼梯 | 1 |
 | 121  | 买卖股票的最佳时机 | 1 |
 | 64   | 最小路径和    | 1 |
@@ -218,4 +218,5 @@ todo: 617 543  338 46 48  287 2 98 4
 | 44 | 通配符匹配 |  |
 | 63 | 不同路径 II |  |
 | 322 | [零钱兑换](https://leetcode.cn/problems/coin-change/) | 1 |
+| 1143 | [最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/) | 1 |
 
