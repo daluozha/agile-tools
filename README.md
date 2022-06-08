@@ -21,6 +21,7 @@
 - webpack-src : webpack demo 详见 <https://segmentfault.com/a/1190000021693432 >
   - snake 贪吃蛇
 - rollup-src : rollup demo 详见 <https://www.ruanyifeng.com/blog/2022/05/rollup.html >
+- type-challenges: <https://github.com/type-challenges/type-challenges >
 - else:
   - AST.js : 抽象语法树
   - puppeteer.js : 了解 puppeteer 库的使用
