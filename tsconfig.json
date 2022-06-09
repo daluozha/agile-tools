@@ -1,9 +1,10 @@
 {
-  // "include": ["./typescript/**/*"],
-  "compilerOptions": {
-    // "outDir": "ts-dist"
-    "module": "ES2015",
-    "target": "ES2015",
-    "strict": true
-  }
+    // "include": ["./typescript/**/*"],
+    "compilerOptions": {
+        // "outDir": "ts-dist"
+        "module": "ES2015",
+        "target": "ES2015",
+        "strict": true,
+        "moduleResolution": "node"
+    }
 }
