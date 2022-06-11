@@ -36,6 +36,7 @@ specifiers:
   purify-css: ^1.2.5
   purifycss-webpack: ^0.7.0
   request: ^2.88.2
+  shell-task: ^1.0.0
   snabbdom: ^2.1.0
   style-loader: ^3.3.1
   tapable: ^2.2.1
@@ -58,6 +59,7 @@ dependencies:
   pug: 3.0.2
   puppeteer: 8.0.0
   request: 2.88.2
+  shell-task: 1.0.0
   tapable: 2.2.1
 
 devDependencies:
@@ -6405,6 +6407,10 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
     dev: true
+
+  /shell-task/1.0.0:
+    resolution: {integrity: sha512-N8xYA9ukj8D0Jh2MI+nXJw9Jvk/DeIBGvAVPASXrJMSZ2JI+LoDLV4gbwmwPx82ibhyDT9clZY58pW+pVhVkUQ==}
+    dev: false
 
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
