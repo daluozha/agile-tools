@@ -15,6 +15,7 @@
 - node: 
   - <https://www.runoob.com/nodejs/nodejs-tutorial.html >
   - <http://nodejs.cn/learn >
+  - <https://juejin.cn/post/6844904015147499533 >
 - typescript: ts 入门练手 <https://www.bilibili.com/video/BV1Xy4y1v7S2 >
 - webpack-src : webpack demo 详见 <https://segmentfault.com/a/1190000021693432 >
   - snake 贪吃蛇

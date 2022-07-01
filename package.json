@@ -13,11 +13,14 @@
     "webpack-dev": "webpack-dev-server --open",
     "eslint-fix": "eslint ./eslint-src/example.js --fix"
   },
+  "bin":{
+    "q-cli":"./node/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daluozha/RENEKTOY.git"
   },
-  "author": "",
+  "author": "daluozha",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/daluozha/RENEKTOY/issues"
@@ -30,6 +33,7 @@
     "cowsay": "^1.5.0",
     "ejs": "^3.1.8",
     "express": "^4.17.3",
+    "inquirer": "^8.0.0",
     "koa": "^2.13.1",
     "log4js": "^6.3.0",
     "matter-js": "^0.18.0",
