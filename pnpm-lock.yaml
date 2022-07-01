@@ -34,6 +34,7 @@ specifiers:
   postcss: ^8.4.14
   postcss-loader: ^6.2.1
   postcss-preset-env: ^7.6.0
+  progress: ^2.0.3
   pug: ^3.0.2
   puppeteer: ^8.0.0
   purify-css: ^1.2.5
@@ -60,6 +61,7 @@ dependencies:
   log4js: 6.5.2
   matter-js: 0.18.0
   node-fetch: 2.6.7
+  progress: 2.0.3
   pug: 3.0.2
   puppeteer: 8.0.0
   request: 2.88.2
