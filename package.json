@@ -65,6 +65,7 @@
     "glob": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.2",
+    "jest-location-mock": "^1.0.9",
     "less": "^4.1.2",
     "less-loader": "^11.0.0",
     "mini-css-extract-plugin": "^2.6.0",
