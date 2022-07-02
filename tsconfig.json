@@ -4,7 +4,9 @@
         // "outDir": "ts-dist"
         "module": "ES2015",
         "target": "ES2015",
+        "esModuleInterop": true,
         "strict": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "types": ["node", "jest"]
     }
 }
