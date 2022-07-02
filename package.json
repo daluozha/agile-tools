@@ -11,10 +11,11 @@
     "webpack-build1": "webpack ./webpack-src/index.js -o ./webpack-dist/bundle.js",
     "webpack-build2": "webpack",
     "webpack-dev": "webpack-dev-server --open",
-    "eslint-fix": "eslint ./eslint-src/example.js --fix"
+    "eslint-fix": "eslint ./eslint-src/example.js --fix",
+    "test": "jest"
   },
-  "bin":{
-    "q-cli":"./node/cli.js"
+  "bin": {
+    "q-cli": "./node/cli.js"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "eslint": "^8.18.0",
     "glob": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.2",
     "less": "^4.1.2",
     "less-loader": "^11.0.0",
     "mini-css-extract-plugin": "^2.6.0",

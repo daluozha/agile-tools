@@ -18,3 +18,4 @@ console.log(process.env)
 
 // console.log(global);
 
+// nextTick() & setTimeout(() => {}, 0) & setImmediate()
