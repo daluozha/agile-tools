@@ -5,3 +5,7 @@ describe("sum", () => {
         expect(sum(1, 1)).toEqual(2);
     });
 });
+
+// test("sum", () => {
+//     expect(sum(1, 1)).toBe(2);
+// });
