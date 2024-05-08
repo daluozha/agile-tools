@@ -1,6 +1,7 @@
-// 一个非常der的compiler实现
+// 一个非常 der 的 compiler 实现
 
 function tokenizer(input) {
+
     let tokens = [];
     let type = "";
     let val = "";
@@ -201,9 +202,9 @@ export function render(_ctx, _cache, $props){
 function compiler(template) {
     const ast = parse(template);
     console.log(JSON.stringify(ast, null, 2));
-    transform(ast);
+    transform("ast", ast);
     const code = generate(ast);
-    console.log(code);
+    console.log("code", code);
     // return new Function(code);
 }
 

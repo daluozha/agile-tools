@@ -37,6 +37,7 @@ specifiers:
   mini-css-extract-plugin: ^2.6.0
   node-fetch: ^2.6.1
   nodemon: ^2.0.15
+  playwright: ^1.24.2
   postcss: ^8.4.14
   postcss-loader: ^6.2.1
   postcss-preset-env: ^7.6.0
@@ -102,6 +103,7 @@ devDependencies:
   less-loader: 11.0.0_less@4.1.2+webpack@5.73.0
   mini-css-extract-plugin: 2.6.0_webpack@5.73.0
   nodemon: 2.0.16
+  playwright: 1.24.2
   postcss: 8.4.14
   postcss-loader: 6.2.1_mepnsno3xmng6eyses4tepu7bu
   postcss-preset-env: 7.7.1_postcss@8.4.14
@@ -7470,6 +7472,21 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+
+  /playwright-core/1.24.2:
+    resolution: {integrity: sha512-zfAoDoPY/0sDLsgSgLZwWmSCevIg1ym7CppBwllguVBNiHeixZkc1AdMuYUPZC6AdEYc4CxWEyLMBTw2YcmRrA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
+  /playwright/1.24.2:
+    resolution: {integrity: sha512-iMWDLgaFRT+7dXsNeYwgl8nhLHsUrzFyaRVC+ftr++P1dVs70mPrFKBZrGp1fOKigHV9d1syC03IpPbqLKlPsg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.24.2
+    dev: true
 
   /postcss-attribute-case-insensitive/5.0.1_postcss@8.4.14:
     resolution: {integrity: sha512-wrt2VndqSLJpyBRNz9OmJcgnhI9MaongeWgapdBuUMu2a/KNJ8SENesG4SdiTnQwGO9b1VKbTWYAfCPeokLqZQ==}
